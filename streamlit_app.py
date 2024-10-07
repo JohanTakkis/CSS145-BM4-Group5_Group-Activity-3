@@ -128,7 +128,7 @@ st.text("The bar chart shows that Smartphones are the most purchased products.")
 # Box Chart: Total Price Distribution by Product Type
 st.markdown("#### Box Chart: Total Price Distribution by Product Type")
 st.code("""
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=12, 6))
 sns.boxplot(data=df, x='Product Type', y='Total Price', palette='Set2')
 plt.title('Total Price Distribution by Product Type')
 plt.xlabel('Product Type')
@@ -145,16 +145,15 @@ st.text("The box chart shows that Smartphones have the most varied prices.")
 st.markdown("#### Heatmap: Correlation Heatmap of Customer Data")
 st.code("""
 numeric_data = df[['Age', 'Rating', 'Total Price']]
+
 correlation_matrix = numeric_data.corr()
+
 plt.figure(figsize=(8, 6))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
 plt.title('Correlation Heatmap of Customer Data')
 plt.tight_layout()
 plt.show()
 """)
-
-st.image("assets/heatmap.png", caption="Correlation Heatmap of Customer Data", use_column_width=True)
-st.text("The heatmap shows the correlations between Age, Rating, and Total Price.")
 
 # Scatter Plot: Total Price vs Add-on Total
 st.markdown("#### Scatter Plot: Total Price vs Add-on Total")
